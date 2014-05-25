@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TankGL", "TankGL\TankGL\TankGL.csproj", "{727A67FF-51B4-4104-B9EA-D65110C58CC3}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TankGLContent", "TankGL\TankGLContent\TankGLContent.contentproj", "{B70504D2-EC85-491F-9489-25DC95709796}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{727A67FF-51B4-4104-B9EA-D65110C58CC3}.Debug|x86.ActiveCfg = Debug|x86
+		{727A67FF-51B4-4104-B9EA-D65110C58CC3}.Debug|x86.Build.0 = Debug|x86
+		{727A67FF-51B4-4104-B9EA-D65110C58CC3}.Release|x86.ActiveCfg = Release|x86
+		{727A67FF-51B4-4104-B9EA-D65110C58CC3}.Release|x86.Build.0 = Release|x86
+		{B70504D2-EC85-491F-9489-25DC95709796}.Debug|x86.ActiveCfg = Debug|x86
+		{B70504D2-EC85-491F-9489-25DC95709796}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
