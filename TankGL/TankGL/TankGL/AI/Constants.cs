@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TankGL.GUI
+namespace TankGL.AI
 {
-    class Brick
+    class Constants
     {
+        public const int GRID_SIZE = 10 ;
     }
 }

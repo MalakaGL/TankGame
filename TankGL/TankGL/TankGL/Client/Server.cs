@@ -11,7 +11,7 @@ namespace TankGL.Client
 {
     class Server
     {
-        // Set the TcpListener on port 13000.
+        // Set the TcpListener on port 7000.
         Int32 port = 7000;
         IPAddress localAddr = IPAddress.Parse("127.0.0.1");
         String message = "Failed";
@@ -19,7 +19,6 @@ namespace TankGL.Client
         // Buffer for reading data
         Byte[] bytes = new Byte[256];
         String data = null;
-        bot myBot = new bot();
     
         public void listen()
         {
@@ -34,7 +33,7 @@ namespace TankGL.Client
                 // Enter the listening loop. 
                 while (true)
                 {
-                    Console.Write("Waiting for a connection... ");
+                    Console.Write("Listening...");
 
                     // Perform a blocking call to accept requests. 
                     // You could also user server.AcceptSocket() here.
@@ -46,7 +45,7 @@ namespace TankGL.Client
                     // Get a stream object for reading and writing
                     NetworkStream stream = client.GetStream();
 
-                    int i, j = 0;
+                    int i = 0;
 
                     // Loop to receive all the data sent by the client. 
                     if ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
@@ -54,26 +53,35 @@ namespace TankGL.Client
                         // Translate data bytes to a ASCII string.
                         data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                         message = new String(data.ToCharArray());
-                        Console.WriteLine("\n\n" + message);
-                        switch(message.Substring(0,1))
+                        Console.WriteLine(message + "\n\n");
+                        switch(message.Substring(0,2))
                         {
-                            case "P": //Players full
-                                bot.playersFull();
+                            case "G:":
+                                Bot.globalUpdate(message);
                                 break;
-                            case "A": //ALready added
-                                bot.alreadyAdded();
+                            case "C:":
+                                Bot.tryCoins(message);
                                 break;
-                            case "G": //Game already begun, global update, finished or not started yet
-                                bot.globalUpdate();
+                            case "L:":
+                                Bot.tryLifePack(message);
                                 break;
-                            case "S":
-                                bot.intiatePlayer(message);
+                            case "PL": //Players full
+                                Bot.playersFull();
                                 break;
-                            case "I": //initiation and invalid cell
-                                bot.initiateGame(message);
+                            case "AL": //ALready added
+                                Bot.alreadyAdded();
+                                break;
+                            case "GA": //Game already begun, finished or not started yet
+                                Bot.gameIssue(message);
+                                break;
+                            case "S:":
+                                Bot.intiatePlayer(message);
+                                break;
+                            case "I:": //initiation
+                                Bot.initiateGame(message);
                                 break;
                             default:
-                                bot.handleException();
+                                Bot.handleException(message);
                                 break;
                         }
                     }

@@ -72,12 +72,12 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AI\bot.cs" />
-    <Compile Include="AI\Point.cs" />
+    <Compile Include="AI\Bot.cs" />
+    <Compile Include="AI\Cell.cs" />
+    <Compile Include="AI\Constants.cs" />
     <Compile Include="Client\MyClient.cs" />
     <Compile Include="Client\Server.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="GUI\Brick.cs" />
     <Compile Include="GUI\Bullet.cs" />
     <Compile Include="GUI\CoinPill.cs" />
     <Compile Include="GUI\Game.cs" />

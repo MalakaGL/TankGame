@@ -13,7 +13,8 @@ namespace TankGL
         {
             Game1 game = new Game1();
             game.start();
-            //bot.intiatePlayer("S:P0;0,0;0:P1;0,9;0:P2;9,0;0:P3;9,9;0:P4;5,5;0#");
+            //Bot.intiatePlayer("S:P0;0,0;0#");
+            //Bot.globalUpdate("G:P0;0,0;0;0;100;0;0:8,4,0;7,6,0;6,8,0;1,3,0;3,2,0;2,1,0;4,8,0;6,3,0#");
         }
 
         public void start(){

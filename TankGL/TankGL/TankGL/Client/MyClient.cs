@@ -22,9 +22,9 @@ namespace TankGL.Client
             try
             {
                 sender.Connect("127.0.0.1", 6000);
-                Console.WriteLine("Client connected " + sender.Connected);
+                Console.WriteLine("Client connected " + sender.Connected + " : " + msg);
                 s = sender.GetStream();
-                Console.WriteLine("Stream can be written " + s.CanWrite);
+                //Console.WriteLine("Stream can be written " + s.CanWrite);
                 StreamWriter sw = new StreamWriter(s);
                 sw.AutoFlush = true;
                 sw.Write(msg);

@@ -8,10 +8,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>E:\Semester 4\Programming Challenge II\TankGL1\TankGL\TankGL\TankGLContent\</RootDirectory>
-      <LoggerRootDirectory>E:\Semester 4\Programming Challenge II\TankGL1\TankGL\TankGL\TankGL\</LoggerRootDirectory>
-      <IntermediateDirectory>E:\Semester 4\Programming Challenge II\TankGL1\TankGL\TankGL\TankGL\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>E:\Semester 4\Programming Challenge II\TankGL1\TankGL\TankGL\TankGL\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>E:\Semester 4\Programming Challenge II\TankGL2\TankGL\TankGL\TankGLContent\</RootDirectory>
+      <LoggerRootDirectory>E:\Semester 4\Programming Challenge II\TankGL2\TankGL\TankGL\TankGL\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Semester 4\Programming Challenge II\TankGL2\TankGL\TankGL\TankGL\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Semester 4\Programming Challenge II\TankGL2\TankGL\TankGL\TankGL\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
