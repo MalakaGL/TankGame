@@ -1,6 +1,114 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>background.jpg</Source>
+      <Name>background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2014-05-13T11:14:03.5787472+05:30</Time>
+    </Item>
+    <Item>
+      <Source>cannon.png</Source>
+      <Name>cannon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\cannon.xnb</Output>
+      <Time>2014-05-13T11:14:03.6320753+05:30</Time>
+    </Item>
+    <Item>
+      <Source>carriage.png</Source>
+      <Name>carriage</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\carriage.xnb</Output>
+      <Time>2014-05-13T11:14:03.636079+05:30</Time>
+    </Item>
+    <Item>
+      <Source>explosion.png</Source>
+      <Name>explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\explosion.xnb</Output>
+      <Time>2014-05-13T11:14:03.6440982+05:30</Time>
+    </Item>
+    <Item>
+      <Source>foreground.png</Source>
+      <Name>foreground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\foreground.xnb</Output>
+      <Time>2014-05-13T11:14:03.6793519+05:30</Time>
+    </Item>
+    <Item>
+      <Source>ground.jpg</Source>
+      <Name>ground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\ground.xnb</Output>
+      <Time>2014-05-13T11:14:03.6843437+05:30</Time>
+    </Item>
+    <Item>
+      <Source>rocket.png</Source>
+      <Name>rocket</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\rocket.xnb</Output>
+      <Time>2014-05-13T11:14:03.6943627+05:30</Time>
+    </Item>
+    <Item>
+      <Source>smoke.png</Source>
+      <Name>smoke</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\smoke.xnb</Output>
+      <Time>2014-05-13T11:14:03.6993517+05:30</Time>
+    </Item>
+    <Item>
+      <Source>destruction.wav</Source>
+      <Name>destruction</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\destruction.xnb</Output>
+      <Time>2014-05-13T11:14:03.6390837+05:30</Time>
+    </Item>
+    <Item>
+      <Source>fire.wav</Source>
+      <Name>fire</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\fire.xnb</Output>
+      <Time>2014-05-13T11:14:03.6723328+05:30</Time>
+    </Item>
+    <Item>
+      <Source>hitCannon.wav</Source>
+      <Name>hitCannon</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\hitCannon.xnb</Output>
+      <Time>2014-05-13T11:14:03.6873452+05:30</Time>
+    </Item>
+    <Item>
+      <Source>myFont.spritefont</Source>
+      <Name>myFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\myFont.xnb</Output>
+      <Time>2014-05-13T11:14:03.6903451+05:30</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{B70504D2-EC85-491F-9489-25DC95709796}</ContentProjectGUID>
@@ -8,12 +116,36 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>E:\Semester 4\Programming Challenge II\TankGL2\TankGL\TankGL\TankGLContent\</RootDirectory>
-      <LoggerRootDirectory>E:\Semester 4\Programming Challenge II\TankGL2\TankGL\TankGL\TankGL\</LoggerRootDirectory>
-      <IntermediateDirectory>E:\Semester 4\Programming Challenge II\TankGL2\TankGL\TankGL\TankGL\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>E:\Semester 4\Programming Challenge II\TankGL2\TankGL\TankGL\TankGL\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGLContent\</RootDirectory>
+      <LoggerRootDirectory>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Semester 4\Programming Challenge II\TankGL\TankGL\TankGL\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+05:30</Value>
+      </Assembly>
       <Assembly>
         <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
         <Value>2014-05-07T16:05:29.9590507+05:30</Value>

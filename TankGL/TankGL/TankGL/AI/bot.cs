@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TankGL.Client;
+using TankGL.Network;
 using TankGL.GUI;
 
 namespace TankGL.AI
@@ -12,9 +12,17 @@ namespace TankGL.AI
     {
         static int numOfPlayers;
         static Tank[] tanks = new Tank[5];
-        static MyClient client = new MyClient();
+        static Client client = new Client();
         static int myId;
         static Cell[,] grid;
+        static String lastMsg;
+        //private Game myGame;
+
+        public Bot(/*Game myGame*/)
+        {
+            // TODO: Complete member initialization
+            //this.myGame = myGame;
+        }
 
         internal static void playersFull()
         {
@@ -69,50 +77,66 @@ namespace TankGL.AI
                     for (int i = t.getY() - 1; i > 0; i--)
                     {
                         String occ = grid[i, t.getX()].getType();
-                        if (occ.Equals("B") || occ.Substring(0, 1).Equals("P"))
+                        if (occ.Equals(" B") || occ.Substring(0, 1).Equals(" P"))
                         {
                             client.sendMessage("SHOOT#");
+                            lastMsg = "SHOOT#";
                             done = true;
                             break;
                         }
-                        if (occ.Equals("S"))
+                        else if(occ.Equals(" S"))
                         {
                             break;
                         }
                     }
                     break;
                 case 1:
-                    for (int i = tanks[myId].getX() + 1; i < Constants.GRID_SIZE; i++)
+                    for (int i = t.getX() + 1; i < Constants.GRID_SIZE; i++)
                     {
-                        String occ = grid[tanks[myId].getY(), i].getType();
-                        if (occ.Equals("B") || occ.Substring(0, 1).Equals("P"))
+                        String occ = grid[t.getY(), i].getType();
+                        if (occ.Equals(" B") || occ.Substring(0, 1).Equals(" P"))
                         {
                             client.sendMessage("SHOOT#");
+                            lastMsg = "SHOOT#";
                             done = true;
+                            break;
+                        }
+                        else if (occ.Equals(" S"))
+                        {
                             break;
                         }
                     }
                     break;
                 case 2:
-                    for (int i = tanks[myId].getY() + 1; i < Constants.GRID_SIZE; i++)
+                    for (int i = t.getY() + 1; i < Constants.GRID_SIZE; i++)
                     {
-                        String occ = grid[i, tanks[myId].getX()].getType();
-                        if (occ.Equals("B") || occ.Substring(0, 1).Equals("P"))
+                        String occ = grid[i, t.getX()].getType();
+                        if (occ.Equals(" B") || occ.Substring(0, 1).Equals(" P"))
                         {
                             client.sendMessage("SHOOT#");
+                            lastMsg = "SHOOT#";
                             done = true;
+                            break;
+                        }
+                        else if (occ.Equals(" S"))
+                        {
                             break;
                         }
                     }
                     break;
                 case 3:
-                    for (int i = tanks[myId].getX() - 1; i > 0; i--)
+                    for (int i = t.getX() - 1; i > 0; i--)
                     {
-                        String occ = grid[i, tanks[myId].getX()].getType();
-                        if (occ.Equals("B") || occ.Substring(0, 1).Equals("P"))
+                        String occ = grid[t.getY(), i].getType();
+                        if (occ.Equals(" B") || occ.Substring(0, 1).Equals(" P"))
                         {
                             client.sendMessage("SHOOT#");
+                            lastMsg = "SHOOT#";
                             done = true;
+                            break;
+                        }
+                        else if (occ.Equals(" S"))
+                        {
                             break;
                         }
                     }
@@ -128,14 +152,12 @@ namespace TankGL.AI
             call++;
             if (call > 4)
             {
-                Console.WriteLine("Pass 1");
                 return;
             }
 
             switch (direction)
             {
                 case 0:
-                    Console.WriteLine("Checking " + t.getY() + " " +direction);
                     if (t.getY() - 1 < 0)
                     {
                         move(1, call);
@@ -147,6 +169,7 @@ namespace TankGL.AI
                         if (occ.Equals(" E"))
                         {
                             client.sendMessage("UP#");
+                            lastMsg = "UP#";
                         }
                         else
                         {
@@ -156,7 +179,6 @@ namespace TankGL.AI
                     }
                     break;
                 case 1:
-                    Console.WriteLine("Checking " + t.getX() + " " + direction);
                     if (t.getX() + 1 >= Constants.GRID_SIZE)
                     {
                         move(2, call);
@@ -165,10 +187,10 @@ namespace TankGL.AI
                     else
                     {
                         occ = grid[t.getY(), t.getX() + 1].getType();
-                        Console.WriteLine(occ);
                         if (occ.Equals(" E"))
                         {
                             client.sendMessage("RIGHT#");
+                            lastMsg = "RIGHT#";
                         }
                         else
                         {
@@ -178,7 +200,6 @@ namespace TankGL.AI
                     }
                     break;
                 case 2:
-                    Console.WriteLine("Checking " + t.getY() + " " + direction);
                     if (t.getY() + 1 >= Constants.GRID_SIZE)
                     {
                         move(3, call);
@@ -189,7 +210,8 @@ namespace TankGL.AI
                         occ = grid[t.getY() + 1, t.getX()].getType();
                         if (occ.Equals(" E"))
                         {
-                            client.sendMessage("LEFT#");
+                            client.sendMessage("DOWN#");
+                            lastMsg = "DOWN#";
                         }
                         else
                         {
@@ -199,7 +221,6 @@ namespace TankGL.AI
                     }
                     break;
                 case 3:
-                    Console.WriteLine("Checking " + t.getX() + " " + direction);
                     if (t.getX() - 1 < 0)
                     {
                         move(0, call);
@@ -211,6 +232,7 @@ namespace TankGL.AI
                         if (occ.Equals(" E"))
                         {
                             client.sendMessage("LEFT#");
+                            lastMsg = "LEFT#";
                         }
                         else
                         {
@@ -227,6 +249,10 @@ namespace TankGL.AI
             msg = msg.Substring(2, msg.Length - 3);
             setPlayers(msg);
             display();
+            if (!shoot(tanks[myId].getDirection()))
+            {
+                move(tanks[myId].getDirection(), 0);
+            }
         }
 
         internal static void setBricks(String msg)
@@ -322,6 +348,7 @@ namespace TankGL.AI
                     break;
                 case "TOO_QUICK#":
                     // never mind for now :) Consider resending last action
+                    client.sendMessage(lastMsg);
                     break;
                 case "INVALID_CELL#":
                     Console.WriteLine("Invalid cell.");

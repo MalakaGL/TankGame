@@ -75,8 +75,8 @@
     <Compile Include="AI\Bot.cs" />
     <Compile Include="AI\Cell.cs" />
     <Compile Include="AI\Constants.cs" />
-    <Compile Include="Client\MyClient.cs" />
-    <Compile Include="Client\Server.cs" />
+    <Compile Include="Network\Client.cs" />
+    <Compile Include="Network\Server.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GUI\Bullet.cs" />
     <Compile Include="GUI\CoinPill.cs" />
